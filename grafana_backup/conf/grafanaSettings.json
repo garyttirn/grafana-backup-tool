@@ -11,10 +11,10 @@
   },
   "grafana": {
     "url": "http://localhost:3000",
-    "token": "",
+    "token": "GRAFANA_ADMIN_TOKEN",
     "search_api_limit": 5000,
     "default_user_password": "00000000",
-    "admin_account": "",
-    "admin_password": ""
+    "admin_account": "GRAFANA_ADMIN_USER",
+    "admin_password": "GRAFANA_ADMIN_PASSWORD"
   }
 }
