@@ -484,21 +484,6 @@ def search_notification_policies(grafana_url, http_get_headers, verify_ssl, clie
 def update_notification_policy(json_palyload, grafana_url, http_post_headers, verify_ssl, client_cert, debug):
     return send_grafana_put('{0}/api/v1/provisioning/policies'.format(grafana_url), json_palyload, http_post_headers, verify_ssl, client_cert, debug)
 
-def get_all_library_elements(json_payload, grafana_url, http_post_headers, verify_ssl, client_cert, debug):
-    status, response = send_grafana_post('{0}/api/library-panels/search'.format(grafana_url), json_payload, http_post_headers, verify_ssl, client_cert, debug)
-
-    if status != 200:
-        print(f"Error fetching library elements: {status}, {response}")
-        return []
-
-    if not response.get("result") or not response["result"].get("elements"):
-        print("No library elements found.")
-        return []
-
-    print(f"Found {len(response['result']['elements'])} library elements.")
-
-    return response['result']['elements']
-
 
 def get_grafana_version(grafana_url, verify_ssl, http_get_headers):
     r = requests.get('{0}/api/health'.format(grafana_url),
