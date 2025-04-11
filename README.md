@@ -68,6 +68,7 @@ To create and obtain a `Token` for your Grafana server, please refer to the [off
 **NOTE** that you need to generate a `Token` with an `Admin` role for the backup to succeed, otherwise you will have potential permission issues.
 
 ## Installation
+### Docker Image available on [Docker Hub](https://hub.docker.com/r/dealfa/grafana-backup-tool) 
 ### Virtual environment (optional but recommended)
 Create a virtualenv, you could using something like `pyenv` if you'd prefer
 ```
